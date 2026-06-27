@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class P11720_숫자의합 {
+public class P11720_숫자의합 {  // 001
 
   public static void main(String[] args) {
 

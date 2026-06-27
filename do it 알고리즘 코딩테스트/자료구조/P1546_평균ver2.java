@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class P1546_평균ver2 { 
+  // 002
   // A[] 배열을 만들지 않고 temp 변수 사용
 
   public static void main(String[] args) {

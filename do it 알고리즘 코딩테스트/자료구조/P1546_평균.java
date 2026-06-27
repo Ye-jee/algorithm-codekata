@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class P1546_평균 {
+public class P1546_평균 {   // 002
 
   public static void main(String[] args) {
 
