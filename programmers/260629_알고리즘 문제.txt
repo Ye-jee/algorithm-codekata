@@ -1,0 +1,84 @@
+package programmers;
+
+// 배열의 평균값
+class Solution {
+    public double solution(int[] numbers) {
+        
+        double sum = 0;
+        
+        for(int i=0; i<numbers.length; i++){
+            sum = sum + numbers[i];
+        }
+        
+        return sum/numbers.length;
+    }
+}
+
+// 짝수와 홀수
+class Solution {
+    public String solution(int num) {
+        if(num % 2 == 0) {
+            return "Even";
+        }
+
+        return "Odd";
+    }
+}
+
+
+// 평균 구하기
+class Solution {
+    public double solution(int[] arr) {
+        
+        double sum = 0;
+        
+        for(int i=0; i<arr.length; i++){
+            sum = sum + arr[i];
+        }
+        
+        return sum/arr.length;
+    }
+}
+
+
+// 자릿수 더하기
+import java.util.*;
+
+public class Solution {
+    public int solution(int n) {
+        int sum = 0;
+        
+        while (n > 0){      // 자연수 N이 0보다 클 동안 반복한다
+            sum += n % 10;  // 자연수 N의 마지막 자리 숫자를 구해 합계에 더한다
+            n /= 10;        // 마지막 자리 숫자를 버린다
+        }
+        
+        return sum;
+    }
+}
+
+
+// 자릿수 더하기ver2 (백준 P11720_숫자의합)
+import java.util.*;
+
+public class Solution {
+    public int solution(int n) {
+        
+        int answer = 0;
+
+        // 자연수 N을 문자형 배열로 변환
+        char[] arr = Integer.toString(n).toCharArray();
+
+        // 문자열 배열 크키만큼 반복
+        // 배열 안에 값을 *아스키코드를 활용*해 int로 변환
+        for(int i = 0; i < arr.length; i++){
+            answer += arr[i] - '0';
+        }
+
+        return answer;
+    }
+    
+}
+
+
+
