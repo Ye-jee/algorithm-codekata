@@ -1,0 +1,78 @@
+package programmers;
+
+// 약수의 합
+class Solution {
+    public int solution(int n) {
+        
+        int sum = 0;
+        
+        for(int i=1; i<=n; i++) {
+            if(n%i == 0) {          // 약수, 나머지 연산자 %
+                sum += i;
+            }                   
+        }
+        return sum;
+    }
+}
+
+
+// 나머지가 1이 되는 수 찾기
+class Solution {
+    public int solution(int n) {
+        
+        for (int i = 1; i <= n; i++) {  // 1에서 n까지 반복
+            if (n % i == 1) {           // 현재 숫자(i)로 나누었을 때 나머지가 1이면
+                return i;               // 그대로 반환
+            }
+        }   
+
+    return 0;
+    }
+}
+
+
+// 나머지가 1이 되는 수 찾기 ver2  (IntStream 활용)
+import java.util.stream.IntStream;
+
+class Solution {
+    public int solution(int n) {
+        return IntStream.range(2, n)    // 2부터 n-1가지 숫자를 만든다
+            .filter(i -> n % i == 1)    // 각 숫자 i에 대해 n%i==1인지 확인
+            .findFirst()                // 조건을 만족하는 값 중에 가장 먼저 나온 값을 찾음 
+            .orElse(0);                 // 만약 조건을 만족하는 값이 없으면 0 반환
+    }
+}
+// 해당 IntStream을 for문으로 바꾸면
+/*  
+    for(int i=2; i<n; i++){
+        if(n%i==1)
+            return i;
+    }
+    return 0;
+*/
+
+
+// x만큼 간격이 있는 n개의 숫자
+/*
+    입력: 정수 x, 자연수 num   
+    출력: x부터 시작해 x씩 증가하는 숫자 n개를 담은 배열
+    핵심: x의 배수를 1배부터 n배까지 배열에 저장
+*/
+class Solution {
+    public long[] solution(int x, int n) {
+        long[] answer = new long[n];
+        
+        for(int i=0; i<n; i++){
+            // i가 0부터 시작하니까 첫 번째 값은 1이 되어야 해서 i + 1을 사용
+            answer[i] = (long)x * (i+1);    
+            
+        }
+        
+        return answer;
+    }
+}
+
+
+
+
+
