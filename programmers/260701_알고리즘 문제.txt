@@ -1,0 +1,87 @@
+package programmers;
+
+// 자연수 뒤집어 배열로 만들기
+class Solution {
+    public int[] solution(long n) {
+        // n 자릿수 크기 배열 만들기
+        // n을 문자열로 변환해 자릿수 개수를 구하고 그 크기만큼의 배열 선언
+        String str = String.valueOf(n);
+        int[] answer = new int[str.length()];
+        
+        int index = 0;
+        while(n>0){         // n이 0보다 클 동안 반복
+            answer[index] = (int)(n % 10);     // n의 마지막 자리 숫자를 구하고 int로 형변환해 배열에 넣는다       
+            n /= 10;            // n의 마지막 자리 숫자를 제거한다
+            index++;
+            
+        }
+        return answer;
+    }
+}
+
+
+// 문자열을 정수로 바꾸기ver1 (메서드 사용)
+/*
+Integer.parseInt()는 반환타입이 int(기본형)
+Integer.valueOf()는 반환타입 Integer(객체)
+*/
+class Solution {
+    public int solution(String s) {
+        
+        return Integer.parseInt(s);
+    }
+}
+
+// 문자열을 정수로 바꾸기ver2(메서드 사용 안함)
+// 슈도코드
+/*
+result를 0으로 초기화한다.
+음수인지 확인한다.
+문자열의 첫 글자부터 마지막 글자까지 반복한다.
+    현재 문자가 '-'이면 건너뛴다.
+    현재 문자를 숫자로 변환한다.
+    result = result × 10 + 현재 숫자
+음수였다면 result에 -를 붙인다.
+result를 반환한다.
+*/
+class Solution {
+    public int solution(String s) {
+
+        int result = 0;
+        boolean isNegative = false;
+        int start = 0;
+
+        // 첫 글자가 '-'라면 음수라는 표시만 해두고
+        // 숫자는 다음 글자부터 읽기 위해 시작 위치를 1로 변경
+        // '+'도 마찬가지
+        if (s.charAt(0) == '-') {
+            isNegative = true;
+            start = 1;
+        }
+        else if(s.charAt(0) == '+'){
+            start = 1;
+        }
+
+        // 문자열을 한 글자씩 확인
+        for (int i = start; i < s.length(); i++) {
+
+            // 문자 → 숫자로 변환
+            int digit = s.charAt(i) - '0';
+
+            // 기존 숫자의 뒤에 새로운 숫자를 붙인다.
+            result = result * 10 + digit;
+        }
+
+        // 음수였다면 -를 붙여 반환
+        if (isNegative) {
+            return -result;
+        }
+
+        return result;
+        
+        // 또는 삼항연산자 활용
+        // return isNegative ? -result : result;
+    }
+}
+
+
