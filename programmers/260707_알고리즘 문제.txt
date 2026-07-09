@@ -1,5 +1,24 @@
 package programmers;
 
 // 하샤드 수
-
+class Solution {
+    public boolean solution(int x) {
+        
+        int sum = 0;
+        
+        // 자연수 x을 문자형 배열로 변환
+        char[] arr = Integer.toString(x).toCharArray();
+        
+        // 문자열 배열 크기만큼 반복하면서 int로 변환
+        for(int i=0;i<arr.length; i++){
+	        sum += arr[i] - '0';
+        }
+        
+        if(x % sum == 0){
+	        return true;
+        }
+ 
+        return false;
+    }
+}
 
