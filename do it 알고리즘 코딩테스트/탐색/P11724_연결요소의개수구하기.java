@@ -51,7 +51,7 @@ public class P11724_연결요소의개수구하기 {   // 023
   }
   visited[v] = true;
   for(int i : A[v]){
-    if(visited[i] == false) {   // 연결노드 중 방문하지 않았떤 노드만 탐색하기
+    if(visited[i] == false) {   // 연결노드 중 방문하지 않았던 노드만 탐색하기
       DFS(i);
     }
   }
