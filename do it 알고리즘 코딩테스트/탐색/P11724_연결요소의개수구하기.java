@@ -19,7 +19,8 @@ public class P11724_연결요소의개수구하기 {   // 023
     int n = Integer.parseInt(st.nextToken());
     int m = Integer.parseInt(st.nextToken());
 
-    A = new ArrayList<>[n+1];
+  
+    A = new ArrayList[n+1];
     visited = new boolean[n+1];
 
     for(int i=1;i<n+1; i++){    // 1부터 시작, 인접리스트 초기화
